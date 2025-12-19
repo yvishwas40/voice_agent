@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>తెలంగాణ ప్రభుత్వ సహాయక ఏజెంట్ | Telangana Government Helpline</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- ===================== -->
+  <!-- INLINE CSS -->
+  <!-- ===================== -->
+  <style>
+    :root {
+      --primary-color: #E31E24;
+      --secondary-color: #FFD700;
+      --accent-color: #0066CC;
+      --bg-color: #F5F5F5;
+      --panel-bg: #FFFFFF;
+      --text-color: #333333;
+      --text-light: #666666;
+      --border-color: #E0E0E0;
+      --success-color: #28A745;
+      --warning-color: #FFC107;
+      --error-color: #DC3545;
+      --shadow: 0 2px 8px rgba(0,0,0,0.1);
+      --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+      --font-main: 'Noto Sans Telugu', 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-main);
+      background: linear-gradient(135deg, #F5F5F5, #E8E8E8);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Header */
+    .app-header {
+      background: linear-gradient(135deg, var(--primary-color), #C41E24);
+      color: white;
+      padding: 16px 24px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .logo-text p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--success-color);
+    }
+
+    /* Main */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+      padding: 20px;
+      flex: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .chat-container {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .chat-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      background: #F9F9F9;
+    }
+
+    .welcome-message {
+      display: flex;
+      gap: 12px;
+    }
+
+    .agent-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .message {
+      background: white;
+      padding: 12px 16px;
+      border-radius: 16px;
+      max-width: 75%;
+      box-shadow: var(--shadow);
+    }
+
+    .user-msg {
+      background: linear-gradient(135deg, var(--primary-color), #C41E24);
+      color: white;
+      margin-left: auto;
+    }
+
+    .chat-input-container {
+      padding: 12px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      background: #F0F0F0;
+      border-radius: 24px;
+      padding: 8px;
+    }
+
+    #text-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 8px;
+      font-size: 15px;
+      font-family: var(--font-main);
+    }
+
+    .mic-button,
+    .send-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mic-button {
+      background: var(--primary-color);
+    }
+
+    .send-button {
+      background: var(--accent-color);
+    }
+
+    .side-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .panel-section {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .terminal {
+      background: #1E1E1E;
+      color: #00FF88;
+      padding: 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 12px;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 1024px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+      .side-panel {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-container">
+
+    <header class="app-header">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <div class="logo-text">
+            <h1>తెలంగాణ ప్రభుత్వ సహాయక ఏజెంట్</h1>
+            <p>Telangana Government Helpline Agent</p>
+          </div>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span id="status-text">సిద్ధంగా ఉన్నది</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="chat-container">
+        <div class="chat-header">
+          <strong>సంక్షేమ పథకాల సహాయకుడు</strong>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <div class="welcome-message">
+            <div class="agent-avatar">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="message">
+              నమస్కారం! నేను మీ తెలంగాణ ప్రభుత్వ సంక్షేమ పథకాల సహాయకుడు.
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-container">
+          <div class="input-wrapper">
+            <input id="text-input" placeholder="మీ సందేశాన్ని టైప్ చేయండి..." />
+            <button class="mic-button" id="mic-button">
+              <i class="fas fa-microphone"></i>
+            </button>
+            <button class="send-button" id="text-send">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-panel">
+        <div class="panel-section">
+          <h3>సిస్టమ్ లాగ్స్</h3>
+          <div class="terminal" id="terminal">
+            > సిస్టమ్ ప్రారంభించబడింది...
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ===================== -->
+  <!-- INLINE JAVASCRIPT -->
+  <!-- ===================== -->
+  <script>
+    console.log("Voice Agent UI Loaded");
+
+    const chatMessages = document.getElementById("chat-messages");
+    const terminal = document.getElementById("terminal");
+    const textInput = document.getElementById("text-input");
+    const sendBtn = document.getElementById("text-send");
+    const micBtn = document.getElementById("mic-button");
+
+    const ws = new WebSocket("ws://" + window.location.host + "/ws");
+
+    ws.onopen = () => {
+      log("WebSocket connected");
+    };
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.type === "transcript") {
+        addMessage("agent", data.payload.text);
+      }
+    };
+
+    ws.onclose = () => log("WebSocket disconnected");
+
+    function addMessage(role, text) {
+      const div = document.createElement("div");
+      div.className = "message " + (role === "user" ? "user-msg" : "");
+      div.textContent = text;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function log(text) {
+      const line = document.createElement("div");
+      line.textContent = "> " + text;
+      terminal.appendChild(line);
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    sendBtn.onclick = () => {
+      const value = textInput.value.trim();
+      if (!value) return;
+      ws.send(JSON.stringify({ type: "text", payload: value }));
+      addMessage("user", value);
+      textInput.value = "";
+    };
+
+    textInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") sendBtn.onclick();
+    });
+
+    micBtn.onclick = () => {
+      ws.send(JSON.stringify({ type: "listen_start" }));
+      log("Listening started");
+    };
+  </script>
+</body>
+</html>

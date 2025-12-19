@@ -1,0 +1,14 @@
+groq
+sounddevice
+numpy
+scipy
+faster-whisper
+edge-tts
+pydantic
+colorama
+python-dotenv
+aiofiles
+fastapi
+uvicorn
+pygame
+google-cloud-speech
