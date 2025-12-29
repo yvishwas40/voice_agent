@@ -29,18 +29,17 @@ At its core, the agent operates in a continuous cycle:
 graph TD
     User((User)) <-->|Voice/Audio| Frontend[Web Client / Mic]
     Frontend <-->|WebSocket| Backend[FastAPI Server]
-    
-    subgraph "Agent Service (Backend)"
+
+    subgraph AgentService_Backend
         State[State Manager]
-        STT[Speech-to-Text\n(Faster-Whisper)]
-        TTS[Text-to-Speech\n(Edge-TTS)]
-        
-        Planner[Planner\n(Llama-3 via Groq)]
-        Executor[Executor\n(Tool Runner)]
-        Evaluator[Evaluator\n(Result Analyzer)]
+        STT[Speech-to-Text<br/>(Faster-Whisper)]
+        TTS[Text-to-Speech<br/>(Edge-TTS)]
+        Planner[Planner<br/>(Llama-3 via Groq)]
+        Executor[Executor<br/>(Tool Runner)]
+        Evaluator[Evaluator<br/>(Result Analyzer)]
         Memory[Memory Manager]
     end
-    
+
     Backend --> STT
     STT --> Memory
     Memory --> Planner
@@ -49,6 +48,7 @@ graph TD
     Evaluator -->|Synthesis| Planner
     Planner -->|Response Text| TTS
     TTS --> Frontend
+
 ```
 
 ---
